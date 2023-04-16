@@ -10,18 +10,10 @@ import Foundation
 public struct Stack<Element> {
     
     private var elements: [Element]
+    public var count: Int { elements.count }
+    public var isEmpty: Bool { elements.isEmpty }
     
-    public var count: Int {
-        return elements.count
-    }
-    
-    public var isEmpty: Bool {
-        return elements.isEmpty
-    }
-    
-    init(with list: [Element] = []) {
-        self.elements = list
-    }
+    init(with list: [Element] = []) { self.elements = list }
     
     /// 스택의 내용을 비워주는 메서드
     mutating public func clear() {
