@@ -18,7 +18,14 @@ public struct Queue<Element>: CustomStringConvertible {
     public var size: Int { inbox.count + outbox.count }
     /// 큐가 비어있는지를 나타내는 변수. 비어있을 경우 `true`, 비어있지 않을 경우 `false`를 가진다.
     public var isEmpty: Bool { inbox.isEmpty && outbox.isEmpty }
-    /// 큐 에대한 정보를 호출하고 싶을 때 출력하는 변수
+    /// 큐의 가장 앞에 있는 원소를 조회하는 변수. 없을 경우 `nil`을 반환한다.
+    public var front: Element? {
+        if outbox.isEmpty {
+            return inbox.first
+        }
+        return outbox.last
+    }
+    /// 큐에대한 정보를 호출하고 싶을 때 출력하는 변수
     public var description: String {
         if isEmpty { return "status: Queue is Empty" }
         var allElements: [Element] = []
