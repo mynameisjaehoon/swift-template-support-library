@@ -73,6 +73,7 @@ public final class LinkedList<Element: Equatable>: CustomStringConvertible, Sequ
     ///   - data: 삽입할 데이터
     ///   - index: 데이터를 삽입할 위치의 인덱스, 연결리스트의 인덱스는 0부터 시작한다고 가정한다
     /// - Returns: 삽입에 성공했다면 true, 실패했다면 false를 반환한다
+    @discardableResult
     public func insert(_ data: Element, at index: Int) -> Bool {
         var currentIndex: Int = 0
         var current: LLNode<Element>? = head
