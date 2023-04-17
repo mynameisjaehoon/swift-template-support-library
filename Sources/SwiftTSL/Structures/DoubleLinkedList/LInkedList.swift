@@ -31,6 +31,8 @@ public final class LinkedList<Element: Equatable>: CustomStringConvertible, Sequ
         return datas.map{ "\($0)" }.joined(separator: " -> ")
     }
     
+    public init() {  }
+    
     // MARK: - IteratorProtocol
     public func next() -> Element? {
         defer { self.current = self.current?.next }
