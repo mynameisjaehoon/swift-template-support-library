@@ -13,7 +13,7 @@ public struct Stack<Element> {
     public var count: Int { elements.count }
     public var isEmpty: Bool { elements.isEmpty }
     
-    init(with list: [Element] = []) { self.elements = list }
+    public init(with list: [Element] = []) { self.elements = list }
     
     /// 스택의 내용을 비워주는 메서드
     mutating public func clear() {

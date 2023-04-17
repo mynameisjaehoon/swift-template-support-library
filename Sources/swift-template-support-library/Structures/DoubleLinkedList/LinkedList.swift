@@ -177,7 +177,7 @@ public final class LinkedList<Element: Equatable>: CustomStringConvertible, Sequ
 }
 
 extension LinkedList {
-    subscript(_ index: Int) -> Element? {
+    public subscript(_ index: Int) -> Element? {
         var current: LLNode<Element>? = head
         var currentIndex: Int = 0
         while current != nil {

@@ -8,7 +8,7 @@
 import Foundation
 
 /// 큐 자료구조를 구현한 구조체 입니다.
-struct Queue<Element>: CustomStringConvertible {
+public struct Queue<Element>: CustomStringConvertible {
     
     /// 데이터가 들어오는 변수
     private var inbox: [Element]
@@ -30,7 +30,7 @@ struct Queue<Element>: CustomStringConvertible {
                 + "----- Queue End -----"
     }
     
-    init(contentsOf elements: [Element] = []) {
+    public init(contentsOf elements: [Element] = []) {
         self.inbox = elements
         self.outbox = []
     }
