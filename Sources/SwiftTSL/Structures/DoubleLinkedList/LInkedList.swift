@@ -190,6 +190,17 @@ public final class LinkedList<Element: Equatable>: CustomStringConvertible, Sequ
         
         return false
     }
+    
+    public func firstIndex(of data: Element) -> Int {
+        var current: LLNode<Element>? = head
+        var currentIndex: Int = 0
+        repeat {
+            if current?.data == data { return currentIndex }
+            currentIndex += 1
+            current = current?.next
+        } while current != nil
+        return -1
+    }
 }
 
 extension LinkedList {
