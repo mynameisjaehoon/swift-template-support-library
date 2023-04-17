@@ -54,7 +54,7 @@ public final class LinkedList<Element: Equatable>: CustomStringConvertible, Sequ
     /// 연결리스트의 제일 뒤에 데이터를 추가하는 메서드
     /// - Parameter data: 추가할 데이터
     public func append(_ data: Element) {
-        var newNode = LLNode(data: data)
+        let newNode = LLNode(data: data)
         if head == nil {
             head = newNode
             tail = newNode
@@ -77,7 +77,7 @@ public final class LinkedList<Element: Equatable>: CustomStringConvertible, Sequ
         
         repeat {
             if currentIndex == index {
-                var newNode = LLNode<Element>(data: data)
+                let newNode = LLNode<Element>(data: data)
                 
                 newNode.next = current
                 newNode.prev = current?.prev
@@ -94,7 +94,7 @@ public final class LinkedList<Element: Equatable>: CustomStringConvertible, Sequ
         } while current != nil
         
         if currentIndex == index {
-            var newNode = LLNode<Element>(data: data)
+            let newNode = LLNode<Element>(data: data)
             newNode.prev = tail
             tail?.next = newNode
             tail = newNode
@@ -116,7 +116,7 @@ public final class LinkedList<Element: Equatable>: CustomStringConvertible, Sequ
         var current: LLNode<Element>? = head
         var removeCount: Int = 0
         while current != nil {
-            var tempNext = current?.next
+            let tempNext = current?.next
             if current?.data == data {
                 // 삭제 카운트 증가
                 removeCount += 1
@@ -140,7 +140,7 @@ public final class LinkedList<Element: Equatable>: CustomStringConvertible, Sequ
         var removeCount: Int = 0
         
         while current != nil {
-            var tempNext = current?.next
+            let tempNext = current?.next
             if closure(current!.data) {
                 // 삭제 카운트 증가
                 removeCount += 1
