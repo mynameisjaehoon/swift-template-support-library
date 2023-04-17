@@ -19,6 +19,7 @@ public final class LinkedList<Element: Equatable>: CustomStringConvertible, Sequ
     private var current: LLNode<Element>? /// 반복문을 위한 변수
     private var iterateState: ListIterateState = .begin
     private var completeLoop: Bool = false
+    
     public var description: String {
         var current = head
         var datas: [Element] = []
@@ -29,6 +30,16 @@ public final class LinkedList<Element: Equatable>: CustomStringConvertible, Sequ
             current = current?.next
         }
         return datas.map{ "\($0)" }.joined(separator: " -> ")
+    }
+    
+    public var size: Int {
+        var current = head
+        var count: Int = 0
+        while current != nil {
+            count += 1
+            current = current?.next
+        }
+        return count
     }
     
     public init() {  }
