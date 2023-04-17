@@ -6,8 +6,17 @@
 - [Queue](#queue)
 - [Linked List](#linked-listdouble-linked-list)
 
+## 사용법
+
+Swift Package Manager에서 다음 URL로 적용합니다.
+
+```
+https://github.com/mynameisjaehoon/swift-template-support-library.git
+```
+
 ## Stack
 ## Queue
 ## Linked List(Double Linked List)
 
 A description of this package.
+

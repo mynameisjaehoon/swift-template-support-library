@@ -1,4 +1,4 @@
-public struct swift_template_support_library {
+public struct SwiftTSL {
     public private(set) var text = "Hello, World!"
 
     public init() {
