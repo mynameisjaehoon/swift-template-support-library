@@ -9,11 +9,7 @@ final class SwiftTSLTests: XCTestCase {
     
     override func setUpWithError() throws {
         self.stack = Stack<Int>(with: [2,4,6,8,10])
-        self.queue = Queue<Int>()
-        queue.enqueue(2)
-        queue.enqueue(4)
-        queue.enqueue(6)
-        queue.enqueue(8)
+        self.queue = Queue<Int>(contentsOf: [2,4,6,8])
         
         self.linkedList = LinkedList<Int>()
         linkedList.append(1)
@@ -56,12 +52,13 @@ extension SwiftTSLTests {
 extension SwiftTSLTests {
     func test4_queue_enqueue() throws {
         self.queue.enqueue(10)
-        for _ in 0..<4 { queue.dequeue() }
-        XCTAssertEqual(queue.dequeue(), Optional(10))
+        XCTAssertEqual(queue.size, 5)
     }
     
     func test5_queue_dequeue() throws {
+        XCTAssertEqual(queue.front, Optional(2))
         XCTAssertEqual(queue.dequeue(), Optional(2))
+        XCTAssertEqual(queue.size, 3)
     }
     
     func test6_queue_clear() throws {

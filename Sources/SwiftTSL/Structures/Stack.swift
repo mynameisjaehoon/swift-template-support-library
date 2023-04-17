@@ -10,7 +10,7 @@ import Foundation
 public struct Stack<Element> {
     
     private var elements: [Element]
-    public var count: Int { elements.count }
+    public var size: Int { elements.count }
     public var isEmpty: Bool { elements.isEmpty }
     
     public init(with list: [Element] = []) { self.elements = list }
