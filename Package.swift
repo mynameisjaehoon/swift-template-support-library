@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "swift-template-support-library",
+    name: "SwiftTSL",
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
