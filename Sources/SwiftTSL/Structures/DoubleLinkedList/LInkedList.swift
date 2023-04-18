@@ -19,6 +19,7 @@ public final class LinkedList<Element: Equatable>: CustomStringConvertible, Sequ
     private var current: LLNode<Element>? /// 반복문을 위한 변수
     private var iterateState: ListIterateState = .begin
     private var completeLoop: Bool = false
+    
     public var description: String {
         var current = head
         var datas: [Element] = []
@@ -29,6 +30,16 @@ public final class LinkedList<Element: Equatable>: CustomStringConvertible, Sequ
             current = current?.next
         }
         return datas.map{ "\($0)" }.joined(separator: " -> ")
+    }
+    
+    public var size: Int {
+        var current = head
+        var count: Int = 0
+        while current != nil {
+            count += 1
+            current = current?.next
+        }
+        return count
     }
     
     public init() {  }
@@ -138,6 +149,7 @@ public final class LinkedList<Element: Equatable>: CustomStringConvertible, Sequ
     /// 연결리스트에 있는 데이터를 클로저 조건으로 담아 삭제한다
     /// - Parameter closure: 삭제할 데이터의 조건을 담은 `Bool` 타입을 반환하는 클로저
     /// - Returns: 삭제한 노드의 개수
+    @discardableResult
     public func remove(where closure: (Element) -> Bool) -> Int {
         var current: LLNode<Element>? = head
         var removeCount: Int = 0
@@ -159,6 +171,7 @@ public final class LinkedList<Element: Equatable>: CustomStringConvertible, Sequ
         return removeCount
     }
     
+    @discardableResult
     public func remove(at index: Int) -> Bool {
         var current: LLNode<Element>? = head
         var currentIndex: Int = 0
@@ -176,6 +189,17 @@ public final class LinkedList<Element: Equatable>: CustomStringConvertible, Sequ
         } while current != nil
         
         return false
+    }
+    
+    public func firstIndex(of data: Element) -> Int {
+        var current: LLNode<Element>? = head
+        var currentIndex: Int = 0
+        repeat {
+            if current?.data == data { return currentIndex }
+            currentIndex += 1
+            current = current?.next
+        } while current != nil
+        return -1
     }
 }
 
