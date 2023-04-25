@@ -63,3 +63,13 @@
     linkedList.remove(at: 2) // true
     print(linkedList) // 0 -> 3 -> 4 -> 7 -> 0
     ```
+
+- **`firstIndex(of: Element)`**<br>
+    원하는 데이터가 존재하는 데이터가 연결리스트의 몇번째에 위치하는지 찾기 위한 메서드 입니다.
+    - `of`: 찾고자 하는 데이터
+    - **`Return`**: 데이터가 존재하는 첫번째 인덱스를 반환한다. 존재하지 않는다면 -1을 반환한다.
+    ```swift
+    print(linkedList) // 1 -> 3 -> 5 -> 3 -> 6 -> 7
+    linkedList.append(7)
+    print(linkedList.firstIndex(of: 7)) // 5
+    ```

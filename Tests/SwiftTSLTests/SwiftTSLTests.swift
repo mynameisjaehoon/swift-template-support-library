@@ -70,7 +70,9 @@ extension SwiftTSLTests {
 // MARK: - Linked List Test
 extension SwiftTSLTests {
     func test7_linkedList_firstIndex() {
+        print(linkedList)
         linkedList.append(7)
+        print(linkedList.firstIndex(of: 7))
         XCTAssertEqual(linkedList.firstIndex(of: 7), 5)
     }
 }
